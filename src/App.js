@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import "./App.css";
 import Section from "./components/Section/Section";
 import FeedbackOptions from "./components/FeedbackOptions/FeedbackOptions";
@@ -57,10 +57,10 @@ function App() {
   );
 }
 
-export default App;
+App.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+};
 
-//   static propTypes = {
-//     initialGood: PropTypes.number,
-//     initialBad: PropTypes.number,
-//     initialNeutral: PropTypes.number,
-//   };
+export default App;
