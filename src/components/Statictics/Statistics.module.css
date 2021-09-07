@@ -1,0 +1,25 @@
+.list {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 40px;
+
+  color: #8d949e;
+  font-size: 24px;
+}
+
+.items:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.goodStats {
+  color: #0c86ef;
+}
+
+.badStats {
+  color: #f44034;
+}

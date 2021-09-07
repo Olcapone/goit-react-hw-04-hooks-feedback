@@ -1,25 +1,66 @@
-import logo from "./logo.svg";
+import { useEffect, useState } from "react";
+//import PropTypes from "prop-types";
 import "./App.css";
+import Section from "./components/Section/Section";
+import FeedbackOptions from "./components/FeedbackOptions/FeedbackOptions";
+import Statistics from "./components/Statictics/Statistics";
 
 function App() {
+  const [good, setGood] = useState(0);
+  const [bad, setBad] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [totalClick, calcTotal] = useState(0);
+  const [feedbackPercentage, countPositiveFeedback] = useState(0);
+
+  const onLeaveFeedback = (e) => {
+    const name = e.currentTarget.textContent;
+
+    switch (name) {
+      case "good":
+        setGood((prevState) => prevState + 1);
+        break;
+
+      case "bad":
+        setBad((prevState) => prevState + 1);
+        break;
+
+      case "neutral":
+        setNeutral((prevState) => prevState + 1);
+        break;
+      default:
+        return;
+    }
+  };
+
+  useEffect(() => {
+    calcTotal(good + neutral + bad);
+    countPositiveFeedback(Math.round((good / totalClick) * 100));
+  }, [good, neutral, bad, totalClick]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Section title="Please leave feedback">
+        <FeedbackOptions
+          options={{ good, neutral, bad }}
+          onLeaveFeedback={onLeaveFeedback}
+        />
+      </Section>
+
+      <Section title="Statistics">
+        <Statistics
+          options={{ good, neutral, bad }}
+          total={totalClick}
+          positivePercentage={feedbackPercentage}
+        />
+      </Section>
+    </>
   );
 }
 
 export default App;
+
+//   static propTypes = {
+//     initialGood: PropTypes.number,
+//     initialBad: PropTypes.number,
+//     initialNeutral: PropTypes.number,
+//   };
