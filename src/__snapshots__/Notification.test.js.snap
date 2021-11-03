@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification has no props 1`] = `"<h2 className=\\"title\\" />"`;
+
+exports[`Notification has props 1`] = `
+"<h2 className=\\"title\\">
+  test 
+</h2>"
+`;
