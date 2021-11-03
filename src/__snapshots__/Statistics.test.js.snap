@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Statistics has props 1`] = `
+"<Fragment>
+  <Notification message=\\"No feedback given\\" />
+</Fragment>"
+`;
+
+exports[`render Statistics has props 1`] = `
+<DocumentFragment>
+  <h2
+    class="title"
+  >
+    No feedback given
+  </h2>
+</DocumentFragment>
+`;

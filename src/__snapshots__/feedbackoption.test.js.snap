@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedbackOptions has no props 1`] = `"<ul className=\\"list\\" />"`;
+
+exports[`FeedbackOptions has props 1`] = `
+"<ul className=\\"list\\">
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      0
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      1
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      2
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      3
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      4
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      5
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      6
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      7
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      8
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      9
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      10
+    </button>
+  </li>
+  <li className=\\"item\\">
+    <button className=\\"button\\" onClick={[undefined]}>
+      11
+    </button>
+  </li>
+</ul>"
+`;
