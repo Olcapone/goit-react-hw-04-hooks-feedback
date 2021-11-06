@@ -4,10 +4,12 @@
   "private": true,
   "homepage": "https://Olcapone.github.io/goit-react-hw-04-hooks-feedback",
   "dependencies": {
+    "@babel/preset-flow": "^7.16.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
     "gh-pages": "^3.2.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -24,7 +26,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "./node_modules/eslint/bin/eslint.js",
+    "test_j": "jest",
+    "test:coverage": "jest --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -45,8 +50,15 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
     "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-react": "^7.26.1",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2"
@@ -54,5 +66,35 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "jest": {
+    "verbose": true,
+    "clearMocks": true,
+    "collectCoverage": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./__mocks__/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OIPonomarenko/goit-react-hw-04-hooks-feedback.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OIPonomarenko/goit-react-hw-04-hooks-feedback/issues"
   }
 }

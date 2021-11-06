@@ -8,7 +8,8 @@ const Statistics = ({ options, total, positivePercentage }) => {
 
   return (
     <Fragment>
-      {total >= 1 ? (
+      {total >= 1 
+      ? (
         <ul className={s.list}>
           {newArr.map((option) => (
             <li className={s.items} key={shortid.generate()}>
@@ -29,7 +30,8 @@ const Statistics = ({ options, total, positivePercentage }) => {
             </span>
           </li>
         </ul>
-      ) : (
+      ) 
+      : (
         <Notification message="No feedback given"></Notification>
       )}
     </Fragment>
