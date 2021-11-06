@@ -1,9 +1,10 @@
-import React from "react";
-import shortid from "shortid";
-import s from "./FeedbackOptions.module.css";
+import React from 'react'
+import { shape, func } from 'prop-types'
+import shortid from 'shortid'
+import s from './FeedbackOptions.module.css'
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  const newArr = Object.keys({ ...options });
+  const newArr = Object.keys({ ...options })
 
   return (
     <ul className={s.list}>
@@ -15,7 +16,13 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
         </li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export default FeedbackOptions;
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: func,
+  options: shape({})
+  // options: array
+}
+
+export default FeedbackOptions
